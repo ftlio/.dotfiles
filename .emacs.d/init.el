@@ -23,6 +23,9 @@
 ;; Load JS IDE
 (require 'js-ide)
 
+;; Load "Shell" IDE
+(require 'shell-ide)
+
 ;; Whitespace
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
