@@ -1,0 +1,15 @@
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.tern-*
+.\#*
+
+# OS Files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+.ehthumbs.db
+Thumbs.db
