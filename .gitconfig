@@ -1,0 +1,8 @@
+[core]
+	excludesfile = /Users/alen/.gitignore_global
+	editor = emacs
+    
+    
+[filter "ignore_user"]
+	clean = "sed '/#ignore_user$/'d"
+	smudge = cat
