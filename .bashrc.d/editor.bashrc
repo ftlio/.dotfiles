@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-export VISUAL="emacs"
-export GIT_EDITOR="emacs"
-export EDITOR="emacs"
+export VISUAL="emacs -nw"
+export GIT_EDITOR="emacs -nw"
+export EDITOR="emacs -nw"
