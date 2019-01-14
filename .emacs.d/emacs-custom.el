@@ -9,7 +9,7 @@
  '(js2-include-node-externs t)
  '(package-selected-packages
    (quote
-    (xref-js2 js2-refactor prettier-js js2-highlight-vars js2-mode company-tern base16-theme yasnippet-snippets yasnippet company-web company-shell company-dict company-statistics company delight diminish use-package)))
+    (robe company-inf-ruby ruby-tools xref-js2 js2-refactor prettier-js js2-highlight-vars js2-mode company-tern base16-theme yasnippet-snippets yasnippet company-web company-shell company-dict company-statistics company delight diminish use-package)))
  '(require-final-newline t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -20,10 +20,10 @@
 (require 'yas-common)
 (require 'theme-common)
 
-;; Load JS IDE
-(require 'js-ide)
 
-;; Load "Shell" IDE
+;; "IDEs"
+(require 'ruby-ide)
+(require 'js-ide)
 (require 'shell-ide)
 
 ;; Whitespace
@@ -37,7 +37,6 @@
 
 ;; Visuals
 (tool-bar-mode -1)
-(set-frame-parameter nil 'fullscreen 'fullboth)
 (scroll-bar-mode -1)
 (set-window-fringes nil 0 0)
 
@@ -61,3 +60,6 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+
+;; Path things
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
