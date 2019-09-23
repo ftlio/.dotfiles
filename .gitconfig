@@ -6,3 +6,6 @@
 [filter "ignore_user"]
 	clean = "sed '/#ignore_user$/'d"
 	smudge = cat
+[user]
+	name = ftlio
+	email = alen@helloinspire.com

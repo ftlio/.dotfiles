@@ -47,7 +47,4 @@
     :init
     (add-to-list 'company-backends 'web-completion-data)))
 
-
-
-
 (provide 'company-common)

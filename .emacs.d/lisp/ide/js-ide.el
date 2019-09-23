@@ -1,5 +1,8 @@
 ;; ~/.emacs.d/lisp/ide/js-ide.el
 
+;; Add Node to Path
+(setq exec-path (append exec-path '("~/.nvm/versions/node/v10.16.3/bin")))
+
 (use-package company-tern
   :ensure t
   :defer t
