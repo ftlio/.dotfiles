@@ -19,6 +19,8 @@
 (require 'company-common)
 (require 'yas-common)
 (require 'theme-common)
+(require 'key-bindings)
+(require 'my-vc)
 
 ;; Load "IDEs"
 (require 'js-ide)
@@ -49,6 +51,9 @@
 ;; Kill startup screen and set default directory
 (setq inhibit-startup-screen t)
 (setq default-directory "~/")
+
+;; Turn off the damn bell
+(setq ring-bell-function 'ignore)
 
 ;; Path things
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
