@@ -5,6 +5,7 @@
 /.emacs.desktop.lock
 .tern-*
 .\#*
+.projectile
 
 # OS Files
 .DS_Store
