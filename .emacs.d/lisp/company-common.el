@@ -3,9 +3,8 @@
 (use-package company
   :ensure t
   :diminish
-  :init
-  (add-hook 'after-init-hook 'global-company-mode)
   :config
+  (add-hook 'after-init-hook 'global-company-mode)
   (setq company-tooltip-limit 10)
   (setq company-idle-delay 0.1)
   (setq company-echo-delay 0)
@@ -14,15 +13,17 @@
   (setq company-selection-wrap-around t)
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-flip-when-above t)
+  (setq company-dabbrev-downcase nil)
   (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
   (define-key company-active-map [tab] 'company-complete-common-or-cycle)
   (define-key company-active-map (kbd "S-TAB") 'company-select-previous)
-  (define-key company-active-map [backtab] 'company-complete-common-or-cycle)
+  (define-key company-active-map [backtab] 'company-complete-common-or-cycle))
 
   (use-package company-statistics
     :ensure t
-    :config 
+    :config
     (add-hook 'after-init-hook 'company-statistics-mode))
+  
 
   (use-package company-dict
     :ensure t
@@ -45,6 +46,6 @@
   (use-package web-completion-data
     :ensure t
     :init
-    (add-to-list 'company-backends 'web-completion-data)))
+    (add-to-list 'company-backends 'web-completion-data))
 
 (provide 'company-common)

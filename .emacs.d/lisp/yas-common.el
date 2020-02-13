@@ -7,6 +7,7 @@
   (define-key yas-minor-mode-map (kbd "C-c C-y") yas-maybe-expand))
 
 (use-package yasnippet-snippets
-  :ensure t)
+  :ensure t
+  :defer t )
 
 (provide 'yas-common)

@@ -2,6 +2,8 @@
 
 (package-initialize)
 
+(setq debug-on-error t)
+
 ;; Set load path
 (setq default-directory "~/.emacs.d/lisp")
 (normal-top-level-add-to-load-path '("./"))
@@ -20,7 +22,8 @@
 (require 'yas-common)
 (require 'theme-common)
 (require 'key-bindings)
-(require 'my-vc)
+(require 'flycheck-common)
+(require 'ivy-common)
 
 ;; Load "IDEs"
 (require 'js-ide)
@@ -28,6 +31,8 @@
 (require 'ruby-ide)
 (require 'shell-ide)
 (require 'ts-ide)
+(require 'dockerfile-ide)
+(require 'go-ide)
 
 ;; Custom File
 (setq custom-file "~/.emacs.d/emacs-custom.el")
@@ -38,7 +43,6 @@
 (setq-default tab-width 4)
 (defvaralias 'c-basic-offset 'tab-width)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 
 ;; Visuals
 (tool-bar-mode -1)
@@ -57,3 +61,6 @@
 
 ;; Path things
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+
+;; Line numbers
+(global-linum-mode t)
