@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export PATH="/usr/local/opt/python/libexec/bin:/usr/local/sbin:$PATH"
 export PATH="/Users/alen/Library/Python/3.7/bin:$PATH"
