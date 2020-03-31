@@ -1,66 +1,47 @@
 ;; ~/.emacs.d/init.el
 
+(setq debug-on-error t)
 (package-initialize)
 
-(setq debug-on-error t)
+;; Set directory
+(defvar env-home (concat (getenv "HOME") "/"))
+(setq user-emacs-directory (concat env-home ".emacs.d/"))
+(setq default-directory env-home)
 
-;; Set load path
-(setq default-directory "~/.emacs.d/lisp")
-(normal-top-level-add-to-load-path '("./"))
-(normal-top-level-add-subdirs-to-load-path)
-
-;; Ensure use-package is installed
-(require 'use-package-install)
-
-;; Fix MacOS Env Problems
-(use-package exec-path-from-shell
-  :ensure t)
+;; Load Env
+(use-package exec-path-from-shell :ensure t)
 (exec-path-from-shell-initialize)
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
-;; Load common stuff
-(require 'company-common)
-(require 'yas-common)
-(require 'theme-common)
-(require 'key-bindings)
-(require 'flycheck-common)
-(require 'ivy-common)
+;; Load UI/Client related config
+;; hopefully as fast as possible
+(load (locate-user-emacs-file "client.el") nil :nomessage)
+(load (locate-user-emacs-file "use-package-init.el") nil :nomessage)
+(load (locate-user-emacs-file "theme.el") nil :nomessage)
 
-;; Load "IDEs"
+;; Load IDE
+(add-to-list 'load-path (concat user-emacs-directory "ide/"))
+(require 'key-bindings-ide)
+(require 'whitespace-ide)
+(require 'company-ide)
+(require 'yas-ide)
+(require 'flycheck-ide)
+(require 'ivy-ide)
+(require 'misc-ide)
+
 (require 'js-ide)
 (require 'python-ide)
 (require 'ruby-ide)
 (require 'shell-ide)
 (require 'ts-ide)
-(require 'dockerfile-ide)
+(require 'docker-ide)
 (require 'go-ide)
+(require 'make-ide)
 
 ;; Custom File
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
-;; Whitespace
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(defvaralias 'c-basic-offset 'tab-width)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;; Visuals
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(set-window-fringes nil 0 0)
-
-;; Electric Pair Everywhere for now
-(electric-pair-mode 1)
-
-;; Kill startup screen and set default directory
-(setq inhibit-startup-screen t)
-(setq default-directory "~/")
-
-;; Turn off the damn bell
-(setq ring-bell-function 'ignore)
-
-;; Path things
-(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
-
-;; Line numbers
-(global-linum-mode t)
+;; Start server
+(require 'server)
+(unless (server-running-p) (server-start))

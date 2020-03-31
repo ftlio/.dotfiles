@@ -1,3 +1,5 @@
+;; ~/.emacs.d/ide/key-bindings-ide.el
+
 ;; Switch Frames
 (global-set-key (kbd "M-`") 'other-frame)
 
@@ -6,9 +8,4 @@
 (setq mac-option-modifier 'super)
 (setq mac-control-modifier 'control)
 
-;; Org Mode
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
-
-(provide 'key-bindings)
+(provide 'key-bindings-ide)

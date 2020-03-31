@@ -1,5 +1,5 @@
-;; ~/.emacs.d/lisp/ide/shell-ide.el
-;; Stuff for editing shell files
+;; ~/.emacs.d/ide/shell-ide.el
+
 (add-to-list 'auto-mode-alist '("\\.bashrc\\'" . shell-script-mode))
 
 (provide 'shell-ide)

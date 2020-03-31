@@ -1,4 +1,4 @@
-;; ~/.emacs.d/lisp/ide/go-ide.el
+;; ~/.emacs.d/ide/go-ide.el
 
 (setenv "GOPATH" "/Users/alen/gocode:/Users/alen/code/inspire-ems/api")
 (setq exec-path (append exec-path '("/Users/alen/gocode/bin")))

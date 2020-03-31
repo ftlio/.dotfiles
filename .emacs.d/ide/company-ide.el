@@ -1,4 +1,4 @@
-;; ~/.emacs.d/ide/company.el
+;; ~/.emacs.d/ide/company-ide.el
 
 (use-package company
   :ensure t
@@ -23,7 +23,7 @@
     :ensure t
     :config
     (add-hook 'after-init-hook 'company-statistics-mode))
-  
+
 
   (use-package company-dict
     :ensure t
@@ -48,4 +48,4 @@
     :init
     (add-to-list 'company-backends 'web-completion-data))
 
-(provide 'company-common)
+(provide 'company-ide)

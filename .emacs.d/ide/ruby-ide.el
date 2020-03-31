@@ -1,4 +1,4 @@
-;; ~/.emacs.d/lisp/ide/ruby-ide.el
+;; ~/.emacs.d/ide/ruby-ide.el
 
 (use-package robe
   :ensure t

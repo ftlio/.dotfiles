@@ -1,3 +1,4 @@
+;; ~/.emacs.d/ide/docker-ide.el
 
 (use-package dockerfile-mode
   :ensure t
@@ -5,4 +6,4 @@
   :init
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
-(provide 'dockerfile-ide)
+(provide 'docker-ide)

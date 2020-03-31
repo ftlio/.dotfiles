@@ -1,5 +1,12 @@
-(use-package typescript-mode
+;; ~/.emacs.d/ide/ts-ide.el
+
+(use-package web-mode
   :ensure t)
+
+(use-package typescript-mode
+  :ensure t
+  :config
+  (setq-default typescript-indent-level 2))
 
 (use-package tide
   :ensure t)
@@ -15,6 +22,15 @@
   ;; install it separately via package-install
   ;; `M-x package-install [ret] company`
   (company-mode +1))
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+;; enable typescript-tslint checker
+(flycheck-add-mode 'typescript-tslint 'web-mode)
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)

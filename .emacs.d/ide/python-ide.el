@@ -1,4 +1,4 @@
-;; ~/.emacs.d/lisp/ide/python-ide.el
+;; ~/.emacs.d/ide/python-ide.el
 
 (use-package elpy
   :ensure t

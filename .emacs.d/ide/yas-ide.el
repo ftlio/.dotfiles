@@ -1,4 +1,4 @@
-;; ~/.emacs.d/lisp/ide/yas-common.el
+;; ~/.emacs.d/ide/yas-ide.el
 
 (use-package yasnippet
   :ensure t
@@ -8,6 +8,6 @@
 
 (use-package yasnippet-snippets
   :ensure t
-  :defer t )
+  :defer t)
 
-(provide 'yas-common)
+(provide 'yas-ide)

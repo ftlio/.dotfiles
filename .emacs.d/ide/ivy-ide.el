@@ -1,4 +1,4 @@
-;; ~/.emacs.d/lisp/ivy-common.el
+;; ~/.emacs.d/ide/ivy-ide.el
 
 (use-package ivy
   :ensure t
@@ -21,7 +21,7 @@
 (use-package swiper
   :ensure t
   :defer t
-  :bind (("C-s" . swiper))
+  :bind (("C-s" . counsel-grep-or-swiper))
   :diminish)
 
 (use-package counsel
@@ -36,11 +36,18 @@
          ("C-x 4 u" . counsel-unicode-char)
          ("C-c g" . counsel-git)
          ("C-c j" . counsel-git-grep)
-         ("C-c k" . counsel-ag)
+         ("C-c k" . counsel-rg)
          ("C-x l" . counsel-locate)
          :map minibuffer-local-map
          ("C-r" . counsel-minibuffer-history))
   :config
+  (setq counsel-rg-base-command "rg -M 120 \
+                                 --line-number \
+                                 --smart-case \
+                                 --with-filename \
+                                 --color never \
+                                 --follow \
+                                 --no-heading %s")
   (setq ivy-sort-matches-functions-alist '((t . nil)
                                            (ivy-switch-buffer . ivy-sort-function-buffer)
                                            (counsel-find-file . ivy-sort-function-buffer)))
@@ -52,8 +59,10 @@
   :diminish t
   :bind-keymap
   ("C-c p" . projectile-command-map)
+  :config
+  (use-package counsel-projectile :defer :diminish)
   :init
   (setq projectile-completion-system 'ivy))
 
 
-(provide 'ivy-common)
+(provide 'ivy-ide)

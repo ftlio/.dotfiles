@@ -5,8 +5,6 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
 
-(package-initialize)
-
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -25,5 +23,3 @@
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
-
-(provide 'use-package-install)

@@ -1,7 +1,7 @@
-;; ~/.emacs.d/lisp/ide/js-ide.el
+;; ~/.emacs.d/ide/js-ide.el
 
 ;; Add Node to Path
-(setq exec-path (append exec-path '("~/.nvm/versions/node/v10.16.3/bin")))
+(setq exec-path (append exec-path '("~/.nvm/versions/node/v12.16.1/bin")))
 
 (use-package company-tern
   :ensure t
@@ -21,6 +21,7 @@
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
   :config
   (unbind-key "M-." js-mode-map)
+  (setq js2-basic-offset 2)
   (setq js2-include-node-externs t))
 
 (use-package js2-highlight-vars
@@ -36,10 +37,11 @@
   (add-hook 'js2-mode-hook 'tern-mode)
   (setq prettier-js-args '(
 			   "--print-width" "80"
-			   "--tab-width" "4"
-			   "--trailing-comma" "none"
+			   "--tab-width" "2"
+			   "--trailing-comma" "all"
 			   "--single-quote"
-			   "--cursorOffset"
+               "--no-semi"
+			   "--cursor-offset"
 			   )))
 
 (use-package js2-refactor
