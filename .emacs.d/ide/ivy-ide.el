@@ -37,7 +37,7 @@
          ("C-c g" . counsel-git)
          ("C-c j" . counsel-git-grep)
          ("C-c k" . counsel-rg)
-         ("C-x l" . counsel-locate)
+         ("C-x l" . counsel-recentf)
          :map minibuffer-local-map
          ("C-r" . counsel-minibuffer-history))
   :config

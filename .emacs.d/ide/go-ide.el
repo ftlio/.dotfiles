@@ -1,44 +1,40 @@
 ;; ~/.emacs.d/ide/go-ide.el
 
-(setenv "GOPATH" "/Users/alen/gocode:/Users/alen/code/inspire-ems/api")
 (setq exec-path (append exec-path '("/Users/alen/gocode/bin")))
 
-(use-package go-eldoc
-  :ensure t
-  :defer t)
-
-(use-package go-guru
-  :ensure t
-  :defer t
-  :init
-  (go-guru-hl-identifier-mode))
-
-(use-package company-go
-  :ensure t
-  :defer t)
-
-(use-package lsp-mode
-  :ensure t
-  :defer t)
-
 (use-package go-mode
-  :ensure t
   :defer t
+  :ensure t
+  :mode ("\\.go\\'" . go-mode)
   :init
   (setq tab-width 2 indent-tabs-mode 1)
-  (add-hook 'go-mode-hook 'lsp-deferred)
-  (add-hook 'go-mode-hook 'flycheck-mode)
-  (add-hook 'before-save-hook 'gofmt-before-save)
-  (local-set-key (kbd "M-.") 'godef-jump)
-  (local-set-key (kbd "M-*") 'pop-tag-mark)
-  (add-hook 'go-mode-hook
-      (lambda ()
-        (set (make-local-variable 'company-backends) '(company-go))
-        (company-mode))))
+  (setq compile-command "echo Building... && \
+                        go build -v && \
+                        echo Testing... && \
+                        go test -v && \
+                        echo Linter... && \
+                        golint")
+  (setq compilation-read-command nil)
+  :bind (("M-," . compile)
+         ("M-." . godef-jump)))
 
 (use-package go-projectile
-  :ensure t
-  :defer t)
+   :ensure t
+   :defer t)
 
+(setq compilation-window-height 14)
+(defun my-compilation-hook ()
+  (when (not (get-buffer-window "*compilation*"))
+    (save-selected-window
+      (save-excursion
+	(let* ((w (split-window-vertically))
+	       (h (window-height w)))
+	  (select-window w)
+	  (switch-to-buffer "*compilation*")
+	  (shrink-window (- h compilation-window-height)))))))
+(add-hook 'compilation-mode-hook 'my-compilation-hook)
+
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
+(setq compilation-scroll-output t)
 
 (provide 'go-ide)

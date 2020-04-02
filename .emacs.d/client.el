@@ -12,7 +12,7 @@
 
 ;; Prevent the glimpse of un-styled Emacs by disabling these UI elements early.
 (menu-bar-mode -1)
-(setq tool-bar-mode -1)
+(tool-bar-mode -1)
 (when (fboundp 'set-scroll-bar-mode)
   (set-scroll-bar-mode nil))
 
