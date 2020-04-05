@@ -10,4 +10,5 @@ recentf
 elpy
 .lsp-session-v1
 projectile.cache
-var/
+var
+transient

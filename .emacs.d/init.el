@@ -34,6 +34,7 @@
 (require 'swiper-common)
 (require 'flycheck-common)
 (require 'lsp-common)
+(require 'git-common)
 
 ;; Load IDE
 (add-to-list 'load-path (concat user-emacs-directory "ide/"))

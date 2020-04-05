@@ -20,8 +20,8 @@
    ("C-c m u" . counsel-imenu)
    ("C-x C-f" . counsel-find-file)
    ("C-x d" . counsel-dired)
-   ("C-c g" . counsel-git)
-   ("C-c j" . counsel-git-grep)
+   ("C-c g g" . counsel-git)
+   ("C-c g j" . counsel-git-grep)
    ("C-c k" . counsel-rg)
 
    :map read-expression-map
