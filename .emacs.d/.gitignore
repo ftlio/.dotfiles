@@ -8,3 +8,6 @@ ido.last
 projectile-bookmarks.eld
 recentf
 elpy
+.lsp-session-v1
+projectile.cache
+var/
