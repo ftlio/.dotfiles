@@ -9,27 +9,36 @@
 (setq user-emacs-directory (concat env-home ".emacs.d/"))
 (setq default-directory env-home)
 
-;; Load Env
+;; Init use-package
 (load (locate-user-emacs-file "use-package-init.el") nil :nomessage)
+
+;; MacOS path
 (use-package exec-path-from-shell :ensure t)
 (exec-path-from-shell-initialize)
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
-;; Load UI/Client related config
+;; Load client & UI related config
 (load (locate-user-emacs-file "client.el") nil :nomessage)
+(load (locate-user-emacs-file "keybindings.el") nil :nomessage)
+(load (locate-user-emacs-file "whitespace.el") nil :nomessage)
 (load (locate-user-emacs-file "theme.el") nil :nomessage)
+
+;; Load common packages and config
+(add-to-list 'load-path (concat user-emacs-directory "common/"))
+(require 'yas-common)
+(require 'projectile-common)
+(require 'avy-common)
+(require 'spacing-common)
+(require 'company-common)
+(require 'counsel-common)
+(require 'swiper-common)
+(require 'flycheck-common)
+(require 'lsp-common)
 
 ;; Load IDE
 (add-to-list 'load-path (concat user-emacs-directory "ide/"))
-(require 'whitespace-ide)
-(require 'company-ide)
-(require 'yas-ide)
-(require 'flycheck-ide)
-(require 'ivy-ide)
 (require 'misc-ide)
-(require 'key-bindings-ide)
 
-(require 'lsp-ide)
 (require 'js-ide)
 (require 'python-ide)
 (require 'ruby-ide)

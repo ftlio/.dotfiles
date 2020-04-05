@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 # get current branch in git repo
 function parse_git_branch() {

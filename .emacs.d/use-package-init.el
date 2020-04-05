@@ -23,3 +23,6 @@
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
+
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
