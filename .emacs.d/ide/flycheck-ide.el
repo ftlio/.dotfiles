@@ -3,7 +3,6 @@
 (use-package flycheck
   :ensure t
   :defer t
-  :config
-  (flycheck-pos-tip-mode))
+  :config)
 
 (provide 'flycheck-ide)

@@ -6,9 +6,15 @@
   :bind (("C-c C-r" . ivy-resume))
   :init
   (setq ivy-initial-inputs-alist nil)
+  (use-package ivy-hydra
+    :ensure
+    :defer
+    :diminish)
+  (use-package flx
+    :ensure
+    :defer
+    :diminish)
   :config
-  (use-package ivy-hydra :defer :diminish)
-  (use-package flx :defer :diminish)
   (setq ivy-use-selectable-prompt t)
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
@@ -37,7 +43,7 @@
          ("C-c g" . counsel-git)
          ("C-c j" . counsel-git-grep)
          ("C-c k" . counsel-rg)
-         ("C-x l" . counsel-recentf)
+         ("C-c l" . counsel-recentf)
          :map minibuffer-local-map
          ("C-r" . counsel-minibuffer-history))
   :config

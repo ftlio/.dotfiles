@@ -1,12 +1,22 @@
 ;; ~/.emacs.d/ide/go-ide.el
 
-(setq exec-path (append exec-path '("/Users/alen/gocode/bin")))
+(setq exec-path (append exec-path '("~/code/go/bin")))
+
+(defun lsp-go-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
 
 (use-package go-mode
   :defer t
   :ensure t
-  :mode ("\\.go\\'" . go-mode)
+  :mode
+  ("\\.go\\'" . go-mode)
+  :hook
+  (go-mode . lsp-go-install-save-hooks)
   :init
+  (setq lsp-gopls-staticcheck t)
+  (setq lsp-eldoc-render-all t)
+  (setq lsp-gopls-complete-unimported t)
   (setq tab-width 2 indent-tabs-mode 1)
   (setq compile-command "echo Building... && \
                         go build -v && \
@@ -36,5 +46,7 @@
 
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 (setq compilation-scroll-output t)
+
+
 
 (provide 'go-ide)

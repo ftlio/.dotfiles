@@ -1,9 +1,5 @@
 ;; ~/.emacs.d/client.el
 
-;; Stolen from:
-;; Copyright (C) 2016-2020 Chakravarthy Raghunandan
-;; Author: Chakravarthy Raghunandan <rnraghunandan@gmail.com>
-
 (setq package-quickstart t)
 
 ;; Defer garbage collection further back in the startup process

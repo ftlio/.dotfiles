@@ -10,4 +10,6 @@
   :ensure t
   :defer t)
 
+(yas-global-mode 1)
+
 (provide 'yas-ide)
