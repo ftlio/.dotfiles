@@ -1,8 +1,7 @@
-;;; setup-git-stuff.el -*- lexical-binding: t; -*-
-;; Time-stamp: <2020-02-17 13:25:25 csraghunandan>
+;; ~/.emacs.d/git-common.el
 
-;; Copyright (C) 2016-2020 Chakravarthy Raghunandan
-;; Author: Chakravarthy Raghunandan <rnraghunandan@gmail.com>
+;; original config at:
+;; https://github.com/CSRaghunandan/.emacs.d/blob/master/setup-files/setup-git-stuff.el
 
 ;; https://magit.vc , https://github.com/magit/magit
 ;; magit: the git porcelain to manage git

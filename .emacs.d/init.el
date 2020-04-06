@@ -25,6 +25,7 @@
 
 ;; Load common packages and config
 (add-to-list 'load-path (concat user-emacs-directory "common/"))
+(require 'overlay-common)
 (require 'yas-common)
 (require 'projectile-common)
 (require 'avy-common)

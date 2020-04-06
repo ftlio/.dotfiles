@@ -8,7 +8,9 @@
 (use-package ivy
   :diminish
   :init
-  (ivy-mode))
+  (ivy-mode)
+  :bind
+  ("C-c C-r" . ivy-resume))
 
 (use-package counsel
   :diminish
