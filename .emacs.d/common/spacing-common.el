@@ -12,7 +12,9 @@
 ;; https://github.com/laishulu/hl-fill-column/
 (use-package hl-fill-column
   :ensure
-  :hook ((text-mode prog-mode conf-mode) . hl-fill-column-mode))
+  :hook ((text-mode prog-mode conf-mode) . hl-fill-column-mode)
+  :bind
+  ("C-c h l" . hl-fill-column-mode))
 
 ;; Pop a posframe (just a child-frame) at point
 ;; https://github.com/tumashu/posframe
