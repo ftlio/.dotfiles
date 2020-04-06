@@ -39,6 +39,7 @@
 ;; Load IDE
 (add-to-list 'load-path (concat user-emacs-directory "ide/"))
 (require 'misc-ide)
+(require 'treemacs-ide)
 
 (require 'js-ide)
 (require 'python-ide)
