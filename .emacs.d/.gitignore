@@ -12,3 +12,5 @@ elpy
 projectile.cache
 var
 transient
+forge-database.sqlite
+.dap-breakpoints

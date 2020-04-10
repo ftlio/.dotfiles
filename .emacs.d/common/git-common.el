@@ -19,6 +19,9 @@
   :config
   ;; Enable the binding for magit-file=popup
   (global-magit-file-mode 1)
+  ;; Exclude some stuff
+  (setq magit-todos-exlude-globs '(*.js.map))
+
 
   ;; modify a few magit parameters
   (setq magit-stash-arguments '("--include-untracked")

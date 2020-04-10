@@ -1,6 +1,6 @@
 ;; ~/.emacs.d/ide/go-ide.el
 
-(setq exec-path (append exec-path '("~/code/go/bin")))
+(setq exec-path (append exec-path '("~/go/bin")))
 
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)

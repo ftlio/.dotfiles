@@ -1,8 +1,8 @@
 ;; ~/.emacs.d/init.el
 
-(setenv "SHELL" "bash")
 (setq debug-on-error t)
 (package-initialize)
+(setenv "SHELL" "/usr/local/bin/bash")
 
 ;; Set directory
 (defvar env-home (concat (getenv "HOME") "/"))

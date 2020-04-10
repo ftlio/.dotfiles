@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-[[ $TERM != "screen" ]] && exec tmux
+[[ $TERM != "screen" ]] && [[ $TERM != "dumb" ]] && exec tmux
