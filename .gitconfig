@@ -1,0 +1,14 @@
+[core]
+	# TODO: Add prompt + replace in installer
+	# ADD YOUR USER AND UNCOMMENT
+	# exlcludesfile = /full/home/path/.gitignore_global
+	editor = emacs
+
+
+[filter "ignore_user"]
+	clean = "sed '/#ignore_user$/'d"
+	smudge = cat
+[user]
+[url "git@github.com:"]
+	insteadOf = https://github.com
+	insteadOf = https://github.com/
