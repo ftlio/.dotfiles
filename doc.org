@@ -1,0 +1,26 @@
+DOTFILES DOCUMENTATION
+
+* Bash
+
+  More modular / smaller scripts and definitions in indidual files
+  within the .bashrc.d directory, loaded by .bashrc file
+
+* MacOS Installer
+
+  Installs Bash 5.0 on MacOS.  Does NOT configure it for Catalina
+  though
+
+* Tmux
+
+  Sets up basic layout / visuals to reduce border size and show info
+  about sessions and open windows, etc.
+
+* Git
+
+  Basic configuration for identity and global ignores based on editor
+  and OS setup
+
+* Emacs
+  Configuration for Emacs
+
+  See ./.emacs.d/doc.org

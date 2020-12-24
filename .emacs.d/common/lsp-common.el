@@ -10,7 +10,12 @@
   :hook (go-mode . lsp-deferred)
   :config
   (setq lsp-prefer-flymake nil)
-  (setq lsp-keep-workspace-alive nil))
+  (setq lsp-keep-workspace-alive nil)
+  (setq lsp-prefer-capf t)
+  (setq lsp-gopls-staticcheck t)
+  (setq lsp-eldoc-render-all t)
+  (setq lsp-gopls-complete-unimported t)
+  )
 
 (use-package lsp-ui
   :ensure t
@@ -20,10 +25,6 @@
         lsp-ui-flycheck-enable t
         lsp-ui-imenu-enable t
         lsp-ui-sideline-ignore-duplicate t))
-
-(use-package company-lsp
-  :ensure t
-  :config (push 'company-lsp company-backends))
 
 ;; debugger adapter protocol support for emacs
 ;; https://github.com/emacs-lsp/dap-mode/

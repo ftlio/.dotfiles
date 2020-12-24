@@ -3,12 +3,6 @@
 ;; Add Node to Path
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v12.16.1/bin")))
 
-(use-package company-tern
-  :ensure t
-  :defer t
-  :init
-  (add-to-list 'company-backends 'company-tern))
-
 (use-package tern
   :ensure t
   :defer t)

@@ -17,8 +17,6 @@
                ("l" . magit-dired-log)))
   :bind* (("C-c p v" . magit-status))
   :config
-  ;; Enable the binding for magit-file=popup
-  (global-magit-file-mode 1)
   ;; Exclude some stuff
   (setq magit-todos-exlude-globs '(*.js.map))
 
