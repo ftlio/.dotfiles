@@ -14,9 +14,6 @@
   :hook
   (go-mode . lsp-go-install-save-hooks)
   :init
-  (setq lsp-gopls-staticcheck t)
-  (setq lsp-eldoc-render-all t)
-  (setq lsp-gopls-complete-unimported t)
   (setq tab-width 2 indent-tabs-mode 1)
   (setq compile-command "echo Building... && \
                         go build -v && \
@@ -32,6 +29,10 @@
    :ensure t
    :defer t)
 
+(use-package go-capf
+  :ensure t
+  :defer t)
+
 (setq compilation-window-height 14)
 (defun my-compilation-hook ()
   (when (not (get-buffer-window "*compilation*"))
@@ -46,7 +47,5 @@
 
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 (setq compilation-scroll-output t)
-
-
 
 (provide 'go-ide)

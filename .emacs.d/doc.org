@@ -1,0 +1,56 @@
+
+* Purpose
+
+  1. Document the emacs configuration contained herein
+  2. Act as a manual for the thus configured editor
+  3. Track backlog of issues and desired functionality
+
+* Configuration
+** Requirements
+
+   *Should be agnostic to daemon mode, except for where standard
+   emacs ENV is concerned*
+
+*** Common Dependencies
+    *Likely required to work at all*
+
+    1. [[https://github.com/BurntSushi/ripgrep][Ripgrep]] - counsel, projectile
+
+*** IDE Dependencies
+    *Should only break when in the specific IDE context*
+
+    1. [[https://github.com/golang/tools/blob/master/gopls/README.md][gopls]] - golang
+
+** Structure
+
+| File           | Desc                                    |
+| -------------- | --------------------------------------- |
+| client.el      | ENV, GUI, X, Frame, Window options      |
+| common/        | Set up minor modes, globals here        |
+| ide/           | Set up of major modes here              |
+| init.el        | Initialization and imports              |
+| keybindings.el | Misc keybindings                        |
+| theme.el       | Where the theme is set                  |
+| whitespace.el  | Whitespace defaults                     |
+
+* Manual
+  Put the manual here
+* Issues
+** Common
+
+   [ ] Easily jump to project / file in project
+   [ ] String replace on MacOS
+   [ ] Bind open file at point
+   [ ] Search / Fuzzy search for any file name (on while file system
+   or at least HOME)
+   [ ] Search / Fuzzy search for content from CWD
+   [ ] Jump to buffer easily (based on project?)
+   [ ] Jump to window easily
+   [ ] Jump to or show definition easily (go python javascript ruby)
+
+** IDE
+*** Go
+
+    [ ] Fix LSP implementation issues
+    [ ] Project root?
+    [ ] Jump to definitions / show definition info
